@@ -11,9 +11,12 @@ select {
   font-size: 25px;
   padding-left: 10px;
   font-family: monospace;
+  -webkit-box-shadow: 10px 5px 20px #b0dbef;
   box-shadow: 10px 5px 20px #b0dbef;
   border: none;
   border-radius: 5px;
+  font-family: monospace;
+  font-style: oblique;
 }
 .Searchbar:focus {
   border: solid 2px #b0dbef;

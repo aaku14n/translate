@@ -138,17 +138,17 @@ class TranslateListItem extends React.Component {
     );
   }
   lastmonthshow(data) {
-    let l_humidity, l_pressure, l_temp_max, l_temp_min, name;
+    let humidity, pressure, temp_max, temp_min, name;
 
     if (this.props.lastMonth !== null) {
-      console.log(this.props.lastMonth.list);
-      l_humidity = "Humidity - " + this.props.lastMonth.list.main.humidity;
-      l_pressure = "Pressure - " + this.props.lastMonth.list[0].main.pressure;
-      l_temp_max = "Max Temp - " + this.props.lastMonth.list[0].main.temp_max;
-      l_temp_min = "Min Temp - " + this.props.lastMonth.list[0].main.temp_min;
-      name = "Date - " + this.props.lastMonth.list[0].dt_txt;
-      // wind_speed = this.props.lastMonthFetch.list[0].wind.speed;
-    } else name = "Wind Status... ";
+      
+      humidity = "Humidity - " + this.props.lastMonth.main.humidity;
+      pressure = "Pressure - " + this.props.lastMonth.main.pressure;
+      temp_max = "Max Temp - " + this.props.lastMonth.main.temp_max;
+      temp_min = "Min Temp - " + this.props.lastMonth.main.temp_min;
+      name = "Date - " + this.props.lastMonth.dt_txt;
+     
+    } else name = "Past Status... ";
     return data ? (
       <div
         className="col-md-3 "
@@ -160,13 +160,13 @@ class TranslateListItem extends React.Component {
           <div className="card-costum-body">
             {name}
             <br />
-            {l_humidity}
+            {humidity}
             <br />
-            {l_pressure}
+            {pressure}
             <br />
-            {l_temp_max}
+            {temp_max}
             <br />
-            {l_temp_min}
+            {temp_min}
           </div>
         </div>
       </div>
@@ -178,13 +178,13 @@ class TranslateListItem extends React.Component {
   }
   populationshow(data) {
     let humidity, pressure, temp_max, temp_min, name;
-    if (this.props.lastMonth !== null) {
-      humidity = "Humidity - " + this.props.currentMonth.list[0].main.humidity;
-      pressure = "Pressure - " + this.props.currentMonth.list[0].main.pressure;
-      temp_max = "Max Temp - " + this.props.currentMonth.list[0].main.temp_max;
-      temp_min = "Min Temp - " + this.props.currentMonth.list[0].main.temp_min;
-      name = "Date - " + this.props.lastMonth.list[0].dt_txt;
-    } else name = "Wind Status... ";
+    if (this.props.currentMonth !== null) {
+      humidity = "Humidity - " + this.props.currentMonth.main.humidity;
+      pressure = "Pressure - " + this.props.currentMonth.main.pressure;
+      temp_max = "Max Temp - " + this.props.currentMonth.main.temp_max;
+      temp_min = "Min Temp - " + this.props.currentMonth.main.temp_min;
+      name = "Date - " + this.props.currentMonth.dt_txt;
+    } else name = "Current Status... ";
     return data ? (
       <div
         className="col-md-3 "
@@ -215,20 +215,19 @@ class TranslateListItem extends React.Component {
   }
   letracyshow(data) {
     let humidity, pressure, temp_max, temp_min, name;
-    if (this.props.lastMonth !== null) {
-      humidity = "Humidity - " + this.props.nextMonth.list[0].main.humidity;
-      pressure = "Pressure - " + this.props.nextMonth.list[0].main.pressure;
-      temp_max = "Max Temp - " + this.props.nextMonth.list[0].main.temp_max;
-      temp_min = "Min Temp - " + this.props.nextMonth.list[0].main.temp_min;
-      name = "Date - " + this.props.lastMonth.list[0].dt_txt;
-    } else name = "Wind Status... ";
+    if (this.props.nextMonth !== null) {
+      humidity = "Humidity - " + this.props.nextMonth.main.humidity;
+      pressure = "Pressure - " + this.props.nextMonth.main.pressure;
+      temp_max = "Max Temp - " + this.props.nextMonth.main.temp_max;
+      temp_min = "Min Temp - " + this.props.nextMonth.main.temp_min;
+      name = "Date - " + this.props.nextMonth.dt_txt;
+    } else name = "Future Predictions... ";
     return data ? (
       <div
         className="col-md-3 "
         onClick={e => this.props.NextMonthFetchFunction(this.props.info)}
       >
         <div className="card-costum">
-          {" "}
           <div className="card-costum-head">Next Name</div>
           <div className="card-costum-body">
             {name}
@@ -245,7 +244,7 @@ class TranslateListItem extends React.Component {
       </div>
     ) : (
       <div className="col-md-3">
-        <div className="card-costum">{name}</div>
+        <div className="card-costum">Waiting...</div>
       </div>
     );
   }

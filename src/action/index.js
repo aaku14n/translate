@@ -114,7 +114,7 @@ export function NextMonthFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "NEXT_MONTH_FETCH", payload: response.data });
+        dispatch({ type: "NEXT_MONTH_FETCH", payload: response.data.list[0] });
       })
       .catch(err => {
         dispatch({ type: "NEXT_MONTH_FETCH", payload: err });
@@ -130,7 +130,7 @@ export function CurrentMonthFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "CURRENT_MONTH_FETCH", payload: response.data });
+        dispatch({ type: "CURRENT_MONTH_FETCH", payload: response.data.list[20] });
       })
       .catch(err => {
         dispatch({ type: "CURRENT_MONTH_FETCH", payload: err });
@@ -146,7 +146,7 @@ export function LastMonthFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "LAST_MONTH_FETCH", payload: response.data });
+        dispatch({ type: "LAST_MONTH_FETCH", payload: response.data.list[23] });
       })
       .catch(err => {
         dispatch({ type: "LAST_MONTH_FETCH", payload: err });
