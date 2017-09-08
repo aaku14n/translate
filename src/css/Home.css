@@ -1,0 +1,113 @@
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  outline: none;
+}
+.Searchbar {
+  width: 70%;
+  margin-top: 40px;
+  height: 50px;
+  font-size: 25px;
+  padding-left: 10px;
+  font-family: monospace;
+  box-shadow: 10px 5px 20px #b0dbef;
+  border: none;
+  border-radius: 5px;
+}
+.Searchbar:focus {
+  border: solid 2px #b0dbef;
+}
+.box-data {
+  margin-top: 60px;
+}
+.card-costum {
+  width: auto;
+  height: 200px;
+  padding: 10px;
+}
+.card-costum:hover {
+  box-shadow: 0px 0px 25px #b0dbef;
+}
+
+.card-costum-head {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: monospace;
+  color: #368289;
+  border-bottom: solid;
+  -webkit-box-shadow: 0px 5px 6px #cfcfcf;
+  box-shadow: 0px 5px 6px #cfcfcf;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+#loader {
+  /* Uncomment this to make it run! */
+  /*
+     animation: loader 5s linear infinite;
+  */
+  display: none;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+}
+@keyframes loader {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 110%;
+  }
+}
+#box {
+  width: 50px;
+  z-index: 2;
+  height: 50px;
+  background: #fff;
+  animation: animate 0.5s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  background-color: royalblue;
+}
+@keyframes animate {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+  50% {
+    transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+#shadow {
+  width: 50px;
+  height: 5px;
+  background: #000;
+  opacity: 0.1;
+  position: absolute;
+  top: 59px;
+  left: 0;
+  border-radius: 50%;
+  animation: shadow 0.5s linear infinite;
+}
+@keyframes shadow {
+  50% {
+    transform: scale(1.2, 1);
+  }
+}
+
+body-loader {
+  background: #6997db;
+  overflow: hidden;
+}
