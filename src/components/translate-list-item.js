@@ -119,7 +119,7 @@ class TranslateListItem extends React.Component {
     return data ? (
       <div className="col-md-3 " onClick={e => this.renderItemFunction("3")}>
         <div className="card-costum">
-          <div className="card-costum-head">Weather Des.</div>
+          <div className="card-costum-head">Weather description</div>
           <div className="card-costum-body">
             {name}
             <div id="loader" className="loader_3">
@@ -225,8 +225,7 @@ class TranslateListItem extends React.Component {
     return data ? (
       <div className="col-md-3 " onClick={e => this.renderItemFunction("6")}>
         <div className="card-costum">
-          {" "}
-          <div className="card-costum-head">Last Month</div>
+          <div className="card-costum-head">Last Time Status</div>
           <div className="card-costum-body">
             {name}
             <br />
@@ -251,28 +250,28 @@ class TranslateListItem extends React.Component {
       <div className="col-md-3" />
     );
   }
-  populationshow(data) {
+  currentmonthshow(data) {
     let humidity, pressure, temp_max, temp_min, name;
     if (
       this.props.currentMonth !== null &&
       this.props.currentMonth.status === 200
     ) {
       humidity =
-        "Humidity - " + this.props.currentMonth.data.list[20].main.humidity;
+        "Humidity - " + this.props.currentMonth.data.list[4].main.humidity;
       pressure =
-        "Pressure - " + this.props.currentMonth.data.list[20].main.pressure;
+        "Pressure - " + this.props.currentMonth.data.list[4].main.pressure;
       temp_max =
-        "Max Temp - " + this.props.currentMonth.data.list[20].main.temp_max;
+        "Max Temp - " + this.props.currentMonth.data.list[4].main.temp_max;
       temp_min =
-        "Min Temp - " + this.props.currentMonth.data.list[20].main.temp_min;
-      name = "Date - " + this.props.currentMonth.data.list[20].dt_txt;
+        "Min Temp - " + this.props.currentMonth.data.list[4].main.temp_min;
+      name = "Date - " + this.props.currentMonth.data.list[4].dt_txt;
       if (document.querySelector(".loader_7"))
         document.getElementsByClassName("loader_7")[0].style.display = "none";
     } else name = "Current Status... ";
     return data ? (
       <div className="col-md-3 " onClick={e => this.renderItemFunction("7")}>
         <div className="card-costum">
-          <div className="card-costum-head">Current Month</div>
+          <div className="card-costum-head">Current Status</div>
           <div className="card-costum-body">
             {name}
             <br />
@@ -297,25 +296,26 @@ class TranslateListItem extends React.Component {
       <div className="col-md-3" />
     );
   }
-  letracyshow(data) {
+  nextmonthshow(data) {
     let humidity, pressure, temp_max, temp_min, name;
     if (this.props.nextMonth !== null && this.props.nextMonth.status === 200) {
+      console.log(this.props.nextMonth);
       humidity =
-        "Humidity - " + this.props.nextMonth.data.list[39].main.humidity;
+        "Humidity - " + this.props.nextMonth.data.list[5].main.humidity;
       pressure =
-        "Pressure - " + this.props.nextMonth.data.list[39].main.pressure;
+        "Pressure - " + this.props.nextMonth.data.list[5].main.pressure;
       temp_max =
-        "Max Temp - " + this.props.nextMonth.data.list[39].main.temp_max;
+        "Max Temp - " + this.props.nextMonth.data.list[5].main.temp_max;
       temp_min =
-        "Min Temp - " + this.props.nextMonth.data.list[39].main.temp_min;
-      name = "Date - " + this.props.nextMonth.data.list[39].dt_txt;
-      if (document.querySelector(".loader_8"))
-        document.getElementsByClassName("loader_8")[0].style.display = "none";
+        "Min Temp - " + this.props.nextMonth.data.list[5].main.temp_min;
+      name = "Date - " + this.props.nextMonth.data.list[5].dt_txt;
+
+      document.getElementsByClassName("loader_8")[0].style.display = "none";
     } else name = "Future Predictions... ";
     return data ? (
       <div className="col-md-3 " onClick={e => this.renderItemFunction("8")}>
         <div className="card-costum">
-          <div className="card-costum-head">Next Name</div>
+          <div className="card-costum-head">Tomorrow Status</div>
           <div className="card-costum-body">
             {name}
             <br />
@@ -348,8 +348,8 @@ class TranslateListItem extends React.Component {
     if (this.props.id === "4") return this.tempshow(this.props.info);
     if (this.props.id === "5") return this.windshow(this.props.info);
     if (this.props.id === "6") return this.lastmonthshow(this.props.info);
-    if (this.props.id === "7") return this.populationshow(this.props.info);
-    if (this.props.id === "8") return this.letracyshow(this.props.info);
+    if (this.props.id === "7") return this.currentmonthshow(this.props.info);
+    if (this.props.id === "8") return this.nextmonthshow(this.props.info);
   }
 }
 

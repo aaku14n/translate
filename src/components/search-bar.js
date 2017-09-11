@@ -9,7 +9,7 @@ class Searchbar extends React.Component {
         <input
           type="text"
           className="Searchbar"
-          placeholder="Please Enter City Here..."
+          placeholder="Please Enter City Here for weather status..."
           onChange={e => this.props.EnglishAction(e)}
         />
       </div>
