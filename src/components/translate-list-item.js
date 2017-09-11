@@ -299,7 +299,6 @@ class TranslateListItem extends React.Component {
   nextmonthshow(data) {
     let humidity, pressure, temp_max, temp_min, name;
     if (this.props.nextMonth !== null && this.props.nextMonth.status === 200) {
-      console.log(this.props.nextMonth);
       humidity =
         "Humidity - " + this.props.nextMonth.data.list[5].main.humidity;
       pressure =
@@ -309,8 +308,8 @@ class TranslateListItem extends React.Component {
       temp_min =
         "Min Temp - " + this.props.nextMonth.data.list[5].main.temp_min;
       name = "Date - " + this.props.nextMonth.data.list[5].dt_txt;
-
-      document.getElementsByClassName("loader_8")[0].style.display = "none";
+      if (document.querySelector(".loader_8"))
+        document.getElementsByClassName("loader_8")[0].style.display = "none";
     } else name = "Future Predictions... ";
     return data ? (
       <div className="col-md-3 " onClick={e => this.renderItemFunction("8")}>
