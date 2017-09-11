@@ -19,7 +19,7 @@ select {
   font-style: oblique;
 }
 .Searchbar:focus {
-  border: solid 2px #b0dbef;
+  border: solid 1px #b0dbef;
 }
 .box-data {
   margin-top: 60px;
