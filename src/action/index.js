@@ -5,6 +5,7 @@ export const EnglishAction = word => {
     payload: word.target.value
   };
 };
+
 export function stateFetchFunction(pincode) {
   const url =
     "http://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -21,7 +22,6 @@ export function stateFetchFunction(pincode) {
       });
   };
 }
-
 export function distFetchFunction(pincode) {
   const url =
     "http://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -31,14 +31,13 @@ export function distFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "DIST_FETCH", payload: response.data.city });
+        dispatch({ type: "DIST_FETCH", payload: response });
       })
       .catch(err => {
         dispatch({ type: "DIST_FETCH", payload: err });
       });
   };
 }
-
 export function WeatherFetchFunction(pincode) {
   const url =
     "http://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -48,14 +47,13 @@ export function WeatherFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "WEATHER_FETCH", payload: response.data });
+        dispatch({ type: "WEATHER_FETCH", payload: response });
       })
       .catch(err => {
         dispatch({ type: "WEATHER_FETCH", payload: err });
       });
   };
 }
-
 export function CoordinateFetchFunction(pincode) {
   const url =
     "http://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -65,14 +63,13 @@ export function CoordinateFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "COOR_FETCH", payload: response.data });
+        dispatch({ type: "COOR_FETCH", payload: response });
       })
       .catch(err => {
         dispatch({ type: "COOR_FETCH", payload: err });
       });
   };
 }
-
 export function TempFetchFunction(pincode) {
   const url =
     "http://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -82,7 +79,7 @@ export function TempFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "TEMP_FETCH", payload: response.data });
+        dispatch({ type: "TEMP_FETCH", payload: response });
       })
       .catch(err => {
         dispatch({ type: "TEMP_FETCH", payload: err });
@@ -98,7 +95,7 @@ export function WindFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "WIND_FETCH", payload: response.data });
+        dispatch({ type: "WIND_FETCH", payload: response });
       })
       .catch(err => {
         dispatch({ type: "WIND_FETCH", payload: err });
@@ -106,6 +103,7 @@ export function WindFetchFunction(pincode) {
   };
 }
 export function NextMonthFetchFunction(pincode) {
+  console.log("dsafsdf", pincode);
   const url =
     "http://api.openweathermap.org/data/2.5/forecast?q=" +
     pincode +
@@ -114,7 +112,7 @@ export function NextMonthFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "NEXT_MONTH_FETCH", payload: response.data.list[0] });
+        dispatch({ type: "NEXT_MONTH_FETCH", payload: response });
       })
       .catch(err => {
         dispatch({ type: "NEXT_MONTH_FETCH", payload: err });
@@ -130,7 +128,10 @@ export function CurrentMonthFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "CURRENT_MONTH_FETCH", payload: response.data.list[20] });
+        dispatch({
+          type: "CURRENT_MONTH_FETCH",
+          payload: response
+        });
       })
       .catch(err => {
         dispatch({ type: "CURRENT_MONTH_FETCH", payload: err });
@@ -146,7 +147,7 @@ export function LastMonthFetchFunction(pincode) {
     axios
       .get(url)
       .then(response => {
-        dispatch({ type: "LAST_MONTH_FETCH", payload: response.data.list[23] });
+        dispatch({ type: "LAST_MONTH_FETCH", payload: response });
       })
       .catch(err => {
         dispatch({ type: "LAST_MONTH_FETCH", payload: err });
