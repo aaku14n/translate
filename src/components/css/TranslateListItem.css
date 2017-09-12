@@ -1,0 +1,22 @@
+.TranslateListItem {
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+}
+
+.TranslateListItem:hover {
+  border: 1px solid green;
+}
+
+.TranslateListItem-header {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: monospace;
+  color: #368289;
+  /* border-bottom: solid; */
+  -webkit-box-shadow: 0px 5px 6px #cfcfcf;
+  box-shadow: 0px 5px 6px #cfcfcf;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding-left: 10px;
+}

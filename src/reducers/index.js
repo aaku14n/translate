@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import EnglishText from "./english-reducers";
-import StateFetch from "./state-fetch";
+import area from "./state-fetch";
 import WeatherFetch from "./weather-fetch";
 import CoorFetch from "./coor-fetch";
 import DistFetch from "./dist-fetch";
@@ -12,7 +12,7 @@ import NextMonthFetch from "./next-month-fetch";
 
 const allReducers = combineReducers({
   EnglishText,
-  StateFetch,
+  area,
   DistFetch,
   WeatherFetch,
   CoorFetch,

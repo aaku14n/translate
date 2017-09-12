@@ -1,4 +1,4 @@
-export default function(state = null, action) {
+const pincode = (state = { pincode: null }, action) => {
   switch (action.type) {
     case "ENGLISH_TRANSLATE": {
       return action.payload;
@@ -6,4 +6,6 @@ export default function(state = null, action) {
     default:
       return state;
   }
-}
+};
+
+export default pincode;
