@@ -7,7 +7,6 @@ export default class Searchbar extends React.Component {
     this.props.onClick(e.target.value);
   }
   render() {
-    console.log(this.props);
     return (
       <div className="SearchBar-Box">
         <input
