@@ -21,6 +21,6 @@ export default class TranslateListItem extends React.Component {
 
 TranslateListItem.propTypes = {
   header: PropTypes.string,
-  subheader: PropTypes.string,
+  subheader: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onClick: PropTypes.func
 };
