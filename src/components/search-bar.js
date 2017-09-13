@@ -19,4 +19,3 @@ export default class Searchbar extends React.Component {
     );
   }
 }
-// onChange={e => this.props.EnglishAction(e)}

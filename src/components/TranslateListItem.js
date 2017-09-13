@@ -9,11 +9,22 @@ export default class TranslateListItem extends React.Component {
       this.props.onClick(this.props.pincode);
     }
   }
+  bodyContent() {
+    return this.props.subheader === null
+      ? null
+      : this.props.subheader.map(item => {
+          return (
+            <p key={Object.keys(item)}>
+              <b>{Object.keys(item)} :</b> {Object.values(item)}
+            </p>
+          );
+        });
+  }
   render() {
     return (
       <div className="TranslateListItem" onClick={() => this.handleClick()}>
         <div className="TranslateListItem-header">{this.props.header}</div>
-        <div className="TranslateListItem-body">{this.props.subheader}</div>
+        <div className="TranslateListItem-body">{this.bodyContent()}</div>
       </div>
     );
   }
@@ -21,6 +32,6 @@ export default class TranslateListItem extends React.Component {
 
 TranslateListItem.propTypes = {
   header: PropTypes.string,
-  subheader: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  subheader: PropTypes.array,
   onClick: PropTypes.func
 };
