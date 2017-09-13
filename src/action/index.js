@@ -83,7 +83,7 @@ function fetchStateSuccess(name) {
   return {
     type: FETCH_STATE_SUCCESS,
     status: SUCCESS,
-    name
+    name: name
   };
 }
 
@@ -100,7 +100,9 @@ export function fetchStateName(pincode) {
     dispatch(fetchStateRequest());
     try {
       const result = await api.get(pincode);
-      dispatch(fetchStateSuccess(result.data.city.name));
+      let city_name = [];
+      city_name.push({ Name: result.data.city.name });
+      dispatch(fetchStateSuccess(city_name));
     } catch (e) {
       dispatch(fetchStateFailure(e.message));
     }
@@ -121,7 +123,7 @@ function fetchCountryCodeSuccess(name) {
   return {
     type: FETCH_COUNTRY_CODE_SUCCESS,
     status: SUCCESS,
-    name
+    name: name
   };
 }
 
@@ -138,7 +140,9 @@ export function fetchCountryCode(pincode) {
     dispatch(fetchCountryCodeRequest());
     try {
       const result = await api.get(pincode);
-      dispatch(fetchCountryCodeSuccess(result.data.city.country));
+      let city_name = [];
+      city_name.push({ Code: result.data.city.country });
+      dispatch(fetchCountryCodeSuccess(city_name));
     } catch (e) {
       dispatch(fetchCountryCodeFailure(e.message));
     }
@@ -159,7 +163,7 @@ function fetchWeatherSuccess(name) {
   return {
     type: FETCH_WEATHER_SUCCESS,
     status: SUCCESS,
-    name
+    name: name
   };
 }
 
@@ -176,7 +180,9 @@ export function fetchWeather(pincode) {
     dispatch(fetchWeatherRequest());
     try {
       const result = await api.get(pincode);
-      dispatch(fetchWeatherSuccess(result.data.list[0].weather[0].description));
+      let city_name = [];
+      city_name.push({ Weather: result.data.list[0].weather[0].description });
+      dispatch(fetchWeatherSuccess(city_name));
     } catch (e) {
       dispatch(fetchWeatherFailure(e.message));
     }
@@ -196,7 +202,7 @@ function fetchTempSuccess(temp) {
   return {
     type: FETCH_TEMP_SUCCESS,
     status: SUCCESS,
-    temp
+    temp: temp
   };
 }
 function fetchTempFailure(errorMsg) {
@@ -211,7 +217,9 @@ export function fetchTemp(pincode) {
     dispatch(fetchTempRequest());
     try {
       let result = await api.get(pincode);
-      dispatch(fetchTempSuccess(result.data.list[0].main.temp));
+      let city_name = [];
+      city_name.push({ Temp: result.data.list[0].main.temp });
+      dispatch(fetchTempSuccess(city_name));
     } catch (e) {
       return dispatch(fetchTempFailure(e.message));
     }
@@ -247,8 +255,10 @@ export function fetchWind(pincode) {
     dispatch(fetchWindRequest());
     try {
       let result = await api.get(pincode);
-
-      dispatch(fetchWindSuccess(result.data.list[0].wind.speed));
+      let wind_status = [];
+      wind_status.push({ deg: result.data.list[0].wind.deg });
+      wind_status.push({ speed: result.data.list[0].wind.speed });
+      dispatch(fetchWindSuccess(wind_status));
     } catch (e) {
       dispatch(fetchWindFailure(e.message));
     }
@@ -285,7 +295,14 @@ export function fetchNextMonth(pincode) {
     dispatch(fetchNextMonthRequest());
     try {
       let result = await api.get(pincode);
-      dispatch(fetchNextMonthSuccess(result.data.list[0].dt_txt));
+      let month_status = [];
+      month_status.push({ temp: result.data.list[0].main.temp });
+      month_status.push({ temp_min: result.data.list[0].main.temp_min });
+      month_status.push({ temp_max: result.data.list[0].main.temp_max });
+      month_status.push({ pressure: result.data.list[0].main.pressure });
+      month_status.push({ sea_level: result.data.list[0].main.sea_level });
+      month_status.push({ humidity: result.data.list[0].main.humidity });
+      dispatch(fetchNextMonthSuccess(month_status));
     } catch (e) {
       dispatch(fetchNextMonthFailure(e.message));
     }
@@ -322,8 +339,14 @@ export function fetchCurrentMonth(pincode) {
     dispatch(fetchCurrentMonthRequest());
     try {
       let result = await api.get(pincode);
-
-      dispatch(fetchCurrentMonthSuccess(result.data.list[4].dt_txt));
+      let month_status = [];
+      month_status.push({ temp: result.data.list[4].main.temp });
+      month_status.push({ temp_min: result.data.list[4].main.temp_min });
+      month_status.push({ temp_max: result.data.list[4].main.temp_max });
+      month_status.push({ pressure: result.data.list[4].main.pressure });
+      month_status.push({ sea_level: result.data.list[4].main.sea_level });
+      month_status.push({ humidity: result.data.list[4].main.humidity });
+      dispatch(fetchCurrentMonthSuccess(month_status));
     } catch (e) {
       dispatch(fetchCurrentMonthFailure(e.message));
     }
@@ -360,8 +383,14 @@ export function fetchLastMonth(pincode) {
     dispatch(fetchLastMonthRequest());
     try {
       let result = await api.get(pincode);
-
-      dispatch(fetchLastMonthSuccess(result.data.list[14].dt_txt));
+      let month_status = [];
+      month_status.push({ temp: result.data.list[14].main.temp });
+      month_status.push({ temp_min: result.data.list[14].main.temp_min });
+      month_status.push({ temp_max: result.data.list[14].main.temp_max });
+      month_status.push({ pressure: result.data.list[14].main.pressure });
+      month_status.push({ sea_level: result.data.list[14].main.sea_level });
+      month_status.push({ humidity: result.data.list[14].main.humidity });
+      dispatch(fetchLastMonthSuccess(month_status));
     } catch (e) {
       dispatch(fetchLastMonthFailure(e.message));
     }
