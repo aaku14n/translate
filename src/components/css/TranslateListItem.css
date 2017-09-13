@@ -1,0 +1,62 @@
+.TranslateListItem {
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  transition: box-shadow 0.3s;
+}
+
+.TranslateListItem:hover {
+  box-shadow: 0px 10px 20px #b0dbef;
+  cursor: pointer;
+}
+
+.TranslateListItem-header {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: monospace;
+  color: #368289;
+  /* border-bottom: solid; */
+  -webkit-box-shadow: 0px 5px 6px #cfcfcf;
+  box-shadow: 0px 5px 6px #cfcfcf;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.row {
+  display: inline-flex;
+  margin-top: 10px;
+}
+.MainContainer {
+  left: 10px;
+}
+.SearchBar-Container {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.SearchBar-Box {
+  text-align: center;
+}
+.Searchbar {
+  width: 70%;
+  margin-top: 40px;
+  height: 50px;
+  font-size: 25px;
+  padding-left: 10px;
+  font-family: monospace;
+  -webkit-box-shadow: 10px 5px 20px #b0dbef;
+  box-shadow: 10px 5px 20px #b0dbef;
+  border: none;
+  border-radius: 5px;
+  font-family: monospace;
+  font-style: oblique;
+  border: solid 0.5px white;
+}
+.Searchbar:focus {
+  border-color: #b0dbef;
+}
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  outline: none;
+}
