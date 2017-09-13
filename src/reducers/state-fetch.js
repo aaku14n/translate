@@ -2,7 +2,7 @@ import {
   FETCH_STATE_REQUEST,
   FETCH_STATE_SUCCESS,
   FETCH_STATE_FAILURE
-} from "../action/index.js";
+} from "../action/config";
 
 const area = (state = { name: null, status: null, error: null }, action) => {
   switch (action.type) {

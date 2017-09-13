@@ -5,16 +5,15 @@ import TranslateListItem from "../components/TranslateListItem.js";
 const mapDispatchToProps = dispatch => {
   return {
     onClick: pincode => {
-      const test = "560095";
-      dispatch(fetchStateName(test));
+      dispatch(fetchStateName(pincode));
     }
   };
 };
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     header: "Area Name",
+    pincode: state.pincode.pincode,
     subheader: state.area.name
   };
 };
@@ -24,15 +23,3 @@ const AreaNameContainer = connect(mapStateToProps, mapDispatchToProps)(
 );
 
 export default AreaNameContainer;
-
-/*
-  {
-    area: {
-      areaName: null
-    },
-    otherReducers
-  }
-
-
-
-*/

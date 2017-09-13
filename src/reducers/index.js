@@ -1,25 +1,23 @@
 import { combineReducers } from "redux";
-import EnglishText from "./english-reducers";
+import pincode from "./pincode-save";
 import area from "./state-fetch";
-import WeatherFetch from "./weather-fetch";
-import CoorFetch from "./coor-fetch";
-import DistFetch from "./dist-fetch";
-import TempFetch from "./temp-fetch";
-import WindFetch from "./wind-fetch";
-import LastMonthFetch from "./last-month-fetch";
-import CurrentMonthFetch from "./current-month-fetch";
-import NextMonthFetch from "./next-month-fetch";
+import weather from "./weather-fetch";
+import country from "./dist-fetch";
+import temp from "./temp-fetch";
+import wind from "./wind-fetch";
+import lastMonth from "./last-month-fetch";
+import currentMonth from "./current-month-fetch";
+import nextMonth from "./next-month-fetch";
 
 const allReducers = combineReducers({
-  EnglishText,
+  pincode,
   area,
-  DistFetch,
-  WeatherFetch,
-  CoorFetch,
-  TempFetch,
-  WindFetch,
-  LastMonthFetch,
-  CurrentMonthFetch,
-  NextMonthFetch
+  country,
+  weather,
+  temp,
+  wind,
+  lastMonth,
+  currentMonth,
+  nextMonth
 });
 export default allReducers;

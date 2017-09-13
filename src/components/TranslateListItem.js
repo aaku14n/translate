@@ -6,18 +6,14 @@ import "./css/TranslateListItem.css";
 export default class TranslateListItem extends React.Component {
   handleClick() {
     if (this.props.onClick) {
-      this.props.onClick();
+      this.props.onClick(this.props.pincode);
     }
   }
   render() {
     return (
       <div className="TranslateListItem" onClick={() => this.handleClick()}>
-        <div className="TranslateListItem-header">
-          {this.props.header}
-        </div>
-        <div className="TranslateListItem-body">
-          {this.props.subheader}
-        </div>
+        <div className="TranslateListItem-header">{this.props.header}</div>
+        <div className="TranslateListItem-body">{this.props.subheader}</div>
       </div>
     );
   }
