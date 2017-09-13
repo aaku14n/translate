@@ -102,6 +102,8 @@ export function fetchStateName(pincode) {
       const result = await api.get(pincode);
       let city_name = [];
       city_name.push({ Name: result.data.city.name });
+      city_name.push({ latitude: result.data.city.coord.lat });
+      city_name.push({ longitude: result.data.city.coord.lon });
       dispatch(fetchStateSuccess(city_name));
     } catch (e) {
       dispatch(fetchStateFailure(e.message));
@@ -181,7 +183,10 @@ export function fetchWeather(pincode) {
     try {
       const result = await api.get(pincode);
       let city_name = [];
-      city_name.push({ Weather: result.data.list[0].weather[0].description });
+      city_name.push({ Weather: result.data.list[0].weather[0].main });
+      city_name.push({
+        Description: result.data.list[0].weather[0].description
+      });
       dispatch(fetchWeatherSuccess(city_name));
     } catch (e) {
       dispatch(fetchWeatherFailure(e.message));
