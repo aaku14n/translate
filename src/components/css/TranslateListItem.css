@@ -1,5 +1,5 @@
 .TranslateListItem {
-  width: 300px;
+  width: 40%;
   height: 200px;
   padding: 10px;
   transition: box-shadow 0.3s;
@@ -23,11 +23,14 @@
   padding-left: 10px;
 }
 .row {
-  display: inline-flex;
+  display: -ms-inline-flexbox;
+  display: flex;
+
   margin-top: 10px;
 }
 .MainContainer {
   left: 10px;
+  padding: 1%;
 }
 .SearchBar-Container {
   text-align: center;
