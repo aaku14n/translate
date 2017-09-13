@@ -10,7 +10,7 @@ const mapDispatchToProps = dispatch => {
 };
 const mapStateToProps = state => {
   return {
-    header: "Tempreture",
+    header: "Temperature",
     pincode: state.pincode.pincode,
     subheader: state.temp.temp
   };
