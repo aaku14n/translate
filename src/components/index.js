@@ -1,7 +1,5 @@
 import React from "react";
-import Searchbar from "./search-bar";
 
-import TranslateListItem from "./TranslateListItem.js";
 import AreaNameContainer from "../containers/AreaNameContainer.js";
 import SearchBarContainer from "../containers/SearchBarContainer";
 import CountryCodeContainer from "../containers/CountryCodeContainer";

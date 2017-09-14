@@ -1,7 +1,5 @@
 import React from "react";
-import { EnglishAction } from "../action/index";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+
 export default class Searchbar extends React.Component {
   handleClick(e) {
     this.props.onClick(e.target.value);

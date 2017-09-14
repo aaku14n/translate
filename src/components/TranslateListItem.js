@@ -15,7 +15,7 @@ export default class TranslateListItem extends React.Component {
       : this.props.subheader.map(item => {
           return (
             <p key={Object.keys(item)}>
-              <b>{Object.keys(item)} :</b> {Object.values(item)}
+              <b>{Object.keys(item)} -</b> {Object.values(item)}
             </p>
           );
         });

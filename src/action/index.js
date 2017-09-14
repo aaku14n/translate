@@ -1,4 +1,3 @@
-import axios from "axios";
 import {
   SAVE_PINCODE_FAILURE,
   SAVE_PINCODE_SUCCESS,
