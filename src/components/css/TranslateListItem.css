@@ -27,14 +27,15 @@
   padding-top: 5px;
 }
 .TranslateListItem-body > p {
-  font-size: 15px;
-  line-height: 0.6;
+  font-size: 12px;
+  margin-bottom: -4px;
+  background: #f4f4f4;
 }
 .row {
-  display: -ms-inline-flexbox;
   display: flex;
-
+  margin-left: 30px;
   margin-top: 10px;
+  margin-right: 30px;
 }
 .MainContainer {
   left: 10px;
